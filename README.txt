@@ -4,7 +4,7 @@
 4- "mlx_get_screen_size"
 5- use -> void	my_mlx_pixel_put(t_data *img, int x, int y, int color)
 {
-    int offset;
+    char offset;
     offset = (y * img->line_length + x * (img->bits_per_pixel / 8));
     *(unsigned int *)(img->img_pixels_ptr + offset) = color;
 }
