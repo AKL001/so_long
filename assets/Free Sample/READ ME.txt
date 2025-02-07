@@ -1,0 +1,23 @@
+If you plan to either use MonMae (MonTamer Maker) or buy the full version, you should use
+the non-compressed version of the tileset, so that you don't have to re-create
+any scenes after upgrading. If you use the compressed version, and then upgrade and start
+using the full version, the tiles will not match up and you'll have to recreate your scenes.
+
+Please follow @yanako_rpgs on twitter or visit our website at: www.yanakorpgs.com to support us, thank you!
+
+Credit us like:
+(c) Yanako RPGs LLC 2022
+
+Helpful links:
+
+Twitter
+https://twitter.com/yanako_rpgs
+
+Itch Assets:
+https://yanako-rpgs.itch.io/
+
+Support Discord:
+https://discord.com/invite/fd62AcwAyY
+
+Website:
+www.yanakorpgs.com
