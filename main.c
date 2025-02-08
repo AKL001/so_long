@@ -313,17 +313,40 @@ void game_init(t_game *game)
     game->player_state.moving = 0;
     game->player_state.frame = 0;
     game->player_state.sleep = 5;
-    game->player_state.offset_x = game->player_x * TILE_SIZE;
-    game->player_state.offset_y = game->player_y * TILE_SIZE;
+    game->player_state.offset_x = 0;
+    game->player_state.offset_y = 0;
     game->player_state.direction = DOWN;
     game->player_state.last_direction = DOWN;
     game->needs_render = 1;
 
-    // Load assets and initialize the buffer
     game->assets.floor_img = mlx_xpm_file_to_image(game->mlx, "assets/floors/floor.xpm", &width, &height);
+    if (!game->assets.floor_img)
+    {
+        printf("error floor\n");
+        exit(1);
+    }
+
     game->assets.wall_img = mlx_xpm_file_to_image(game->mlx, "assets/walls/wall.xpm", &width, &height);
+    if (!game->assets.wall_img)
+    {
+        printf("error wall\n");
+        exit(1);
+    }
+
     game->buffer.img = mlx_new_image(game->mlx, GAME_WIDTH, GAME_HIGHT);
-    game->buffer.addr = mlx_get_data_addr(game->buffer.img, &game->buffer.bpp, &game->buffer.line_len, &game->buffer.endian);
+    if (!game->buffer.img)
+    {
+        printf("Error creating buffer image\n");
+        exit(1);
+    }
+
+    game->buffer.addr = mlx_get_data_addr(game->buffer.img, &game->buffer.bpp, 
+        &game->buffer.line_len, &game->buffer.endian);
+    if (!game->buffer.addr)
+    {
+        printf("Error getting buffer address\n");
+        exit(1);
+    }
 
     game->player_img.img = NULL;
     load_image(game, "assets/character/Down1.xpm");
